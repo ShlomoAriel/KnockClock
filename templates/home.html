@@ -1,0 +1,99 @@
+﻿<div class="row dd-holder">
+    <div class="row">
+        <div class="col-md-4 input-date col-xs-12">
+            <label>תאריך</label>
+            <input type="text" show-button-bar="false" datepicker-options="dateOptions" class="form-control" datepicker-popup="mediumDate" is-open="valuationDatePickerIsOpen" ng-click="valuationDatePickerOpen()"
+            ng-model="date" />
+        </div>
+        <div class="col-md-2 col-xs-6">
+            <label>התחלה</label>
+            <timepicker class="time" value="10:45" ng-model="start" hour-step="1" minute-step="15" show-meridian="ismeridian"></timepicker>
+        </div>
+        <div class="col-md-2 col-xs-6">
+            <label>סיום</label>
+            <timepicker class="time" ng-model="end" hour-step="1" minute-step="15" show-meridian="ismeridian"></timepicker>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-xs-6">
+            <label>אתר</label>
+            <select ng-model="site" ng-options="product as product.name for product in sites" class="form-control" ng-change="getStandings()"></select>
+        </div>
+        <div class="col-md-2 col-xs-6">
+            <label>עובד</label>
+            <select ng-model="worker" ng-options="product as product.name for product in workers track by product.username" class="form-control"
+            ng-change="getStandings()"></select>
+        </div>
+        <div class="col-md-2 col-xs-6">
+            <label>שכר שעתי</label>
+            <input step="5" ng-change="calculateTotal()" class="form-control" placeholder="שכר שעתי" data-ng-model="task.hourlyRate" type="number"
+            min=0 />
+        </div>
+        <div class="col-md-2 col-xs-6">
+            <label>נסיעות</label>
+            <input step="5" type="number" value=0 min=0 ng-change="calculateTotal()" min=0 class="form-control" placeholder="נסיעות" data-ng-model="task.commute"
+            />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>סך הכל</label>
+            <input type="text" class="form-control" data-ng-model="task.total">
+        </div>
+        <div class="col-md-2" style="float:left;">
+            <label>.</label>
+            <input type="submit" class="form-control btn-primary" value="הוספה" ng-click="addTask()">
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+<div class="applewrap table-responsive">
+    <div id="table-head">
+        שעות
+    </div>
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>עובד</th>
+                <th>תאריך</th>
+                <th class="hidden-xs">שעת התחלה</th>
+                <th class="hidden-xs">שעת סיום</th>
+                <th>שעות</th>
+                <th class="hidden-xs">תעריף שעתי</th>
+                <th class="hidden-xs">נסיעות</th>
+                <th>אתר</th>
+                <th class="hidden-xs">מנהל</th>
+                <th>סך הכל</th>
+
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <tr ng-repeat="item in hours" id="item_{{item._id}}">
+                <td>{{$index+1}}</td>
+                <td>{{item.workerName}}</td>
+                <td>{{item.date}}</td>
+                <td class="hidden-xs">{{item.startTime}}</td>
+                <td class="hidden-xs">{{item.endTime}}</td>
+                <td>{{item.hours}}</td>
+                <td class="hidden-xs">{{item.hourlyRate}}</td>
+                <td class="hidden-xs">{{item.commute}}</td>
+                <td>{{item.siteName}}</td>
+                <td class="hidden-xs">{{item.manager}}</td>
+                <td>{{item.total}}</td>
+                <td class="hidden-xs">
+                    <a class="btn btn-danger btn-flat" ng-click="deleteHours()">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="apple-dummy"></div>

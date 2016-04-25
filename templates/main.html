@@ -1,0 +1,18 @@
+﻿
+    <div class="hidden-xs col-lg-12">
+        <tabset>
+            <tab ng-repeat="t in tabs" heading="{{t.heading}}" select="go(t.route)" active="t.active">
+            </tab>
+        </tabset>
+    </div>
+    <div class="container-wrapper col-lg-12">
+        <div ui-view class="wrapper">
+        </div>
+    </div>
+
+    <div class="footer hidden-lg hidden-md hidden-sm">
+        <tabset>
+            <tab ng-repeat="t in tabs" heading="{{t.heading}}" select="go(t.route)" active="t.active">
+            </tab>
+        </tabset>
+    </div>

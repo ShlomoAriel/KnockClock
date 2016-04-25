@@ -1,0 +1,48 @@
+﻿<div class="page-header">
+    <h3>התחברות</h3>
+</div>
+<p>
+    
+</p>
+<div class="clearfix">
+    <div class="row">
+        <form name="form" class="form-horizontal" novalidate>
+            <div class="col-lg-6">
+                <div ng-class="{error: form.Player.$invalid}">
+                    <div class="[ form-group ]">
+                        <label class="" for="username">דואר אלקטרוני</label>
+                        <span style="color:red" ng-show="form.code.$dirty && form.code.$invalid">
+                            <span ng-show="form.code.$error.required">יש להזין דואר אלקטרוני</span>
+                        </span>
+                        <div class="input-group">
+                            <input class="form-control" type="text" ng-model="registration.userName" name="code" required>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                        </div>
+                    </div>
+                     <div class="[ form-group ]">
+                        <label class="" for="password"> שם משתמש</label>
+                        <span style="color:red" ng-show="form.code.$dirty && form.code.$invalid">
+                            <span ng-show="form.code.$error.required">יש להזין דואר אלקטרוני</span>
+                        </span>
+                        <div class="input-group">
+                            <input class="form-control" type="text" ng-model="registration.password" name="code" required>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="[ form-group ]">
+                    <input type="submit" class="btn btn-primary reg-btn" ng-click="signUp()" value="הרשמה"
+                           ng-disabled="(form.email.$error.required && form.email.$invalid) || form.Name.$error.required
+                           || form.code.$error.required || form.team.$error.required || form.team.$error.required || form.terms.$error.required || form.phone.$error.required||isProcessing" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="" >.</label>
+                <div data-ng-hide="message == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                    {{message}}
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
