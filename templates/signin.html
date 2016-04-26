@@ -21,10 +21,14 @@
                     <label>.</label>
                     <input type="submit" class="form-control btn-primary" value="התחברות" ng-click="login()">
                 </div>
-               
+
             </div>
-            <div data-ng-hide="message == ''" class="alert alert-danger">
-                {{message}}
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div data-ng-hide="message == ''" class="alert alert-danger">
+                        {{message}}
+                    </div>
+                </div>
             </div>
         </form>
     </div>

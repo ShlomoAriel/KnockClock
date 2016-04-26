@@ -11,7 +11,6 @@ app.service('CommonServices', function($http, $q) {
         var promise =
             $http.get('http://elated-lion-ms0f.rapidapi.io/getsites')
                 .success(function(data, textStatus, jqXHR) {
-                    console.log("HTTP Request Succeeded: " + jqXHR.status);
                     angular.copy(data, _data.sites);
                 });
         return promise;
@@ -20,7 +19,6 @@ app.service('CommonServices', function($http, $q) {
         var promise =
             $http.get('http://elated-lion-ms0f.rapidapi.io/getworkers')
                 .success(function(data, textStatus, jqXHR) {
-                    console.log("HTTP Request Succeeded: " + jqXHR.status);
                     angular.copy(data, _data.workers);
                 });
         return promise;
@@ -31,7 +29,6 @@ app.service('CommonServices', function($http, $q) {
               manager:"shlomo@gmail.com",password:123456789
         })
                 .success(function(data, textStatus, jqXHR) {
-                    console.log("HTTP Request Succeeded: " + jqXHR.status);
                     angular.copy(data, _data.hours);
                 });
         return promise;
