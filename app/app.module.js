@@ -8,6 +8,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state("main.home", { url: "/home", controller: HomeCtrl, templateUrl: "templates/home.html" })
         .state("main.signup", { url: "/signup", controller: "SignupController", templateUrl: "templates/signup.html" })
         .state("main.signin", { url: "/signin", controller: "LoginController", templateUrl: "templates/signin.html" })
-        .state("main.workers", { url: "/workers", controller: HomeCtrl, templateUrl: "templates/workers.html" })
-        .state("main.sites", { url: "/sites", controller: HomeCtrl, templateUrl: "templates/sites.html" });
+        .state("main.workers", { url: "/workers", controller: WorkerCtrl, templateUrl: "templates/workers.html" })
+        .state("main.sites", { url: "/sites", controller: SiteCtrl, templateUrl: "templates/sites.html" });
 });

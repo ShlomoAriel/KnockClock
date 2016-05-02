@@ -33,6 +33,16 @@ app.service('CommonServices', function($http, $q) {
                 });
         return promise;
     };
+    _data.testSession = function () {
+        var promise =
+            $http.post('http://elated-lion-ms0f.rapidapi.io/test', {
+                manager: "shlomo@gmail.com", password: 123456789
+            })
+                .success(function (data, textStatus, jqXHR) {
+                    
+                });
+        return promise;
+    };
     _data.addTask = function(task) {
         var promise =
             $http.post('http://elated-lion-ms0f.rapidapi.io/add-task', task)
@@ -61,9 +71,9 @@ app.service('CommonServices', function($http, $q) {
         return promise;
     };
     
-    _data.deleteHours = function(id) {
+    _data.deleteTask = function(id) {
         var promise =
-              $http.post("http://elated-lion-ms0f.rapidapi.io/deletehours",{ id: id,manager:"shlomo@gmail.com",password:123456789});
+              $http.post("http://elated-lion-ms0f.rapidapi.io/deletetask",{ id: id,manager:"shlomo@gmail.com",password:123456789});
               
         return promise;
     };

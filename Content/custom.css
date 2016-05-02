@@ -12,15 +12,19 @@
     font-family: OpenSansHebrewLight;
     src: url(/fonts/OpenSansHebrew-Light.ttf);
 }
-.col-md-right{
-    float:right;
+
+.col-md-right {
+    float: right;
 }
-.time,.date,.input-date .dropdown-menu{
-    direction:ltr!important;
+
+.time, .date, .input-date .dropdown-menu {
+    direction: ltr !important;
 }
-.input-date{
-    margin-top:33px;
+
+.input-date {
+    margin-top: 33px;
 }
+
 center a {
     color: transparent !important;
 }
@@ -28,6 +32,47 @@ center a {
 body {
     font-family: OpenSansHebrewBold;
     direction: rtl;
+}
+
+.table-filters {
+    padding: 15px 0px;
+    background: #891BC2;
+    color: white;
+    line-height: 34px;
+}
+
+    .table-filters label {
+        margin: 0px 20px 0px 0px;
+        float: right;
+    }
+
+@media screen and (max-width: 767px) {
+    .table-filters .col-md-2 {
+        padding: 0px;
+    }
+
+    .table-filters .dropdown-menu {
+        position: relative;
+        top: -8px !important;
+        margin-left: -13px;
+    }
+}
+.applewrap{
+    min-height:350px;
+}
+#table-body td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table-filters .dropdown-menu {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.dropdown-menu table {
+    background-color: #ffffff !important;
 }
 
 .date-custom {
@@ -372,9 +417,11 @@ header {
 html, body {
     height: 100%;
 }
-.apple-dummy{
-    height:60px;
+
+.apple-dummy {
+    height: 60px;
 }
+
 .wrapper {
     min-height: 100%;
     height: auto !important;
@@ -382,7 +429,8 @@ html, body {
     margin: 0 auto 5em;
     margin-bottom: 50px;
 }
-.container-wrapper{
+
+.container-wrapper {
     margin-bottom: 50px;
 }
 
@@ -512,6 +560,7 @@ h1 {
     line-height: 22px;
     /*border: 2px solid;*/
 }
+
 .stay-bottom {
     color: white;
     left: 25%;
@@ -519,7 +568,7 @@ h1 {
     /*border: 2px solid;*/
 }
 
-    
+
 
 @media screen and (max-width: 767px) {
     .stay-top {

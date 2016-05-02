@@ -12,6 +12,9 @@
 .terms {
     background: #891BC2;
 }
+.inpout-select{
+    border: 2px solid rgb(137, 27, 194) !important;
+}
 select {
     border-color: #891BC2 !important;
         background: white !important;
